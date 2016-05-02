@@ -1,0 +1,1 @@
+import goughScalePart  # for sqlalchemy
