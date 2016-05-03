@@ -48,8 +48,7 @@ class Serveur(object):
 
         # init part ============================================================
         yield (self._le2mserv.gestionnaire_experience.init_part(
-            "goughScale", "PartieGS",
-            "RemoteGS", pms))
+            "goughScale", "PartieGS", "RemoteGS", pms))
         self._tous = self._le2mserv.gestionnaire_joueurs.get_players(
             'goughScale')
 

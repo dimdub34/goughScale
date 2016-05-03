@@ -21,9 +21,8 @@ class PartieGS(Partie):
     repetitions = relationship('RepetitionsGS')
 
     def __init__(self, le2mserv, joueur):
-        super(PartieGS, self).__init__(
-            nom="goughScale", nom_court="GS",
-            joueur=joueur, le2mserv=le2mserv)
+        Partie.__init__(self, nom="goughScale", nom_court="GS", joueur=joueur,
+                        le2mserv=le2mserv)
         self.GS_gain_ecus = 0
         self.GS_gain_euros = 0
 

@@ -9,8 +9,7 @@ from util.utili18n import le2mtrans
 import goughScaleParams as pms
 from goughScaleTexts import trans_GS
 import goughScaleTexts as texts_GS
-from client.cltgui.cltguidialogs import GuiHistorique
-from client.cltgui.cltguiwidgets import WPeriod, WExplication, WSpinbox
+from client.cltgui.cltguiwidgets import WExplication
 
 
 logger = logging.getLogger("le2m")
