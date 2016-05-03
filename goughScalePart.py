@@ -4,7 +4,7 @@ import logging
 from datetime import datetime
 from twisted.internet import defer
 from sqlalchemy.orm import relationship
-from sqlalchemy import Column, Integer, Float, ForeignKey
+from sqlalchemy import Column, Integer, Float, ForeignKey, Boolean
 from server.servbase import Base
 from server.servparties import Partie
 from util.utiltools import get_module_attributes
@@ -57,10 +57,12 @@ class PartieGS(Partie):
         """
         logger.debug(u"{} Decision".format(self.joueur))
         debut = datetime.now()
-        self.currentperiod.GS_decision = yield(self.remote.callRemote(
+        decisions = yield(self.remote.callRemote(
             "display_decision"))
         self.currentperiod.GS_decisiontime = (datetime.now() - debut).seconds
-        self.joueur.info(u"{}".format(self.currentperiod.GS_decision))
+        for k, v in decisions:
+            setattr(self.currentperiod, "GS_{}".format(k), v)
+        self.joueur.info(u"Ok")
         self.joueur.remove_waitmode()
 
     def compute_periodpayoff(self):
@@ -129,16 +131,41 @@ class RepetitionsGS(Base):
         ForeignKey("partie_goughScale.partie_id"))
 
     GS_period = Column(Integer)
-    GS_treatment = Column(Integer)
-    GS_group = Column(Integer)
-    GS_decision = Column(Integer)
+    GS_competent = Column(Boolean)
+    GS_naturel = Column(Boolean)
+    GS_astucieux = Column(Boolean)
+    GS_prudent = Column(Boolean)
+    GS_confiant = Column(Boolean)
+    GS_tourne_vers_soi = Column(Boolean)
+    GS_ordinaire = Column(Boolean)
+    GS_drole = Column(Boolean)
+    GS_conservateur = Column(Boolean)
+    GS_individualiste = Column(Boolean)
+    GS_conformiste = Column(Boolean)
+    GS_decontracte = Column(Boolean)
+    GS_insatisfait = Column(Boolean)
+    GS_clairvoyant = Column(Boolean)
+    GS_mefiant = Column(Boolean)
+    GS_honnete = Column(Boolean)
+    GS_intelligent = Column(Boolean)
+    GS_bien_eleve = Column(Boolean)
+    GS_tres_curieux = Column(Boolean)
+    GS_inventif = Column(Boolean)
+    GS_imaginatif = Column(Boolean)
+    GS_peu_curieux = Column(Boolean)
+    GS_reflechi = Column(Boolean)
+    GS_sincere = Column(Boolean)
+    GS_ingenieux = Column(Boolean)
+    GS_confiant_en_soi = Column(Boolean)
+    GS_sexy = Column(Boolean)
+    GS_soumis = Column(Boolean)
+    GS_snob = Column(Boolean)
+    GS_non_conformiste = Column(Boolean)
     GS_decisiontime = Column(Integer)
     GS_periodpayoff = Column(Float)
     GS_cumulativepayoff = Column(Float)
 
     def __init__(self, period):
-        self.GS_treatment = pms.TREATMENT
-        self.GS_period = period
         self.GS_decisiontime = 0
         self.GS_periodpayoff = 0
         self.GS_cumulativepayoff = 0

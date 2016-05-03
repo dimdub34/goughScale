@@ -17,32 +17,34 @@ logger = logging.getLogger("le2m")
 
 
 class GuiDecision(QtGui.QDialog):
-    def __init__(self, defered, automatique, parent, period, historique):
+    def __init__(self, defered, automatique, parent):
         super(GuiDecision, self).__init__(parent)
 
         # variables
         self._defered = defered
         self._automatique = automatique
-        self._historique = GuiHistorique(self, historique)
 
         layout = QtGui.QVBoxLayout(self)
-
-        # should be removed if one-shot game
-        wperiod = WPeriod(
-            period=period, ecran_historique=self._historique)
-        layout.addWidget(wperiod)
 
         wexplanation = WExplication(
             text=texts_GS.get_text_explanation(),
             size=(450, 80), parent=self)
         layout.addWidget(wexplanation)
 
-        self._wdecision = WSpinbox(
-            label=trans_GS(u"label decision"),
-            minimum=pms.DECISION_MIN, maximum=pms.DECISION_MAX,
-            interval=pms.DECISION_STEP, automatique=self._automatique,
-            parent=self)
-        layout.addWidget(self._wdecision)
+        grid = QtGui.QGridLayout()
+        layout.addLayout(grid)
+
+        self._checkboxes = {}
+        row, col = 0, 0
+        for k, v in texts_GS.GS_items.viewitems():
+            check = QtGui.QCheckBox()
+            check.setText(v)
+            self._checkboxes[k] = check
+            grid.addWidget(check, row, col)
+            col += 1
+            if col == 5:
+                row += 1
+                col = 0
 
         buttons = QtGui.QDialogButtonBox(QtGui.QDialogButtonBox.Ok)
         buttons.accepted.connect(self._accept)
@@ -66,7 +68,11 @@ class GuiDecision(QtGui.QDialog):
             self._timer_automatique.stop()
         except AttributeError:
             pass
-        decision = self._wdecision.get_value()
+
+        inputs = {}
+        for k, v in self._checkboxes.viewitems():
+            inputs[k] = v.isChecked()
+
         if not self._automatique:
             confirmation = QtGui.QMessageBox.question(
                 self, le2mtrans(u"Confirmation"),
@@ -74,6 +80,6 @@ class GuiDecision(QtGui.QDialog):
                 QtGui.QMessageBox.No | QtGui.QMessageBox.Yes)
             if confirmation != QtGui.QMessageBox.Yes: 
                 return
-        logger.info(u"Send back {}".format(decision))
+        logger.info(u"Send back {}".format(inputs))
         self.accept()
-        self._defered.callback(decision)
+        self._defered.callback(inputs)
