@@ -57,18 +57,18 @@ class Serveur(object):
             le2mtrans(u"Configure"), self._tous, "configure"))
         
         # form groups
-        if pms.TAILLE_GROUPES > 0:
-            try:
-                self._le2mserv.gestionnaire_groupes.former_groupes(
-                    self._le2mserv.gestionnaire_joueurs.get_players(),
-                    pms.TAILLE_GROUPES, forcer_nouveaux=True)
-            except ValueError as e:
-                self._le2mserv.gestionnaire_graphique.display_error(
-                    e.message)
-                return
+        # if pms.TAILLE_GROUPES > 0:
+        #     try:
+        #         self._le2mserv.gestionnaire_groupes.former_groupes(
+        #             self._le2mserv.gestionnaire_joueurs.get_players(),
+        #             pms.TAILLE_GROUPES, forcer_nouveaux=True)
+        #     except ValueError as e:
+        #         self._le2mserv.gestionnaire_graphique.display_error(
+        #             e.message)
+        #         return
     
         # Start part ===========================================================
-        for period in xrange(1 if pms.NOMBRE_PERIODES else 0,
+        for period in range(1 if pms.NOMBRE_PERIODES else 0,
                         pms.NOMBRE_PERIODES + 1):
 
             if self._le2mserv.gestionnaire_experience.stop_repetitions:
@@ -92,8 +92,8 @@ class Serveur(object):
                 "goughScale")
         
             # summary
-            yield(self._le2mserv.gestionnaire_experience.run_step(
-                le2mtrans(u"Summary"), self._tous, "display_summary"))
+            # yield(self._le2mserv.gestionnaire_experience.run_step(
+            #     le2mtrans(u"Summary"), self._tous, "display_summary"))
         
         # End of part ==========================================================
         yield (self._le2mserv.gestionnaire_experience.finalize_part(

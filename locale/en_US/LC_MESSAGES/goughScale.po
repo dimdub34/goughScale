@@ -1,0 +1,150 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: goughScale\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-05-04 14:12+0200\n"
+"PO-Revision-Date: 2016-05-04 14:13+0100\n"
+"Last-Translator: Dimitri DUBOIS <dimitri.dubois@umontpellier.fr>\n"
+"Language-Team: Dimitri DUBOIS <dimitri.dubois@umontpellier.fr>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+
+#: /home/irtimid/Documents/travail/programmes/le2m-v2.1/le2m/parts/goughScale/goughScaleGui.py:53
+msgid "Title"
+msgstr ""
+
+#: /home/irtimid/Documents/travail/programmes/le2m-v2.1/le2m/parts/goughScale/goughScaleTexts.py:26
+msgid "Please check the items you think they qualify yourself."
+msgstr ""
+
+#: /home/irtimid/Documents/travail/programmes/le2m-v2.1/le2m/parts/goughScale/goughScaleTexts.py:30
+msgid "Compétent"
+msgstr ""
+
+#: /home/irtimid/Documents/travail/programmes/le2m-v2.1/le2m/parts/goughScale/goughScaleTexts.py:31
+msgid "Peu naturel/le"
+msgstr ""
+
+#: /home/irtimid/Documents/travail/programmes/le2m-v2.1/le2m/parts/goughScale/goughScaleTexts.py:32
+msgid "Astucieux/se"
+msgstr ""
+
+#: /home/irtimid/Documents/travail/programmes/le2m-v2.1/le2m/parts/goughScale/goughScaleTexts.py:33
+msgid "Prudent/e"
+msgstr ""
+
+#: /home/irtimid/Documents/travail/programmes/le2m-v2.1/le2m/parts/goughScale/goughScaleTexts.py:34
+msgid "Confiant/e"
+msgstr ""
+
+#: /home/irtimid/Documents/travail/programmes/le2m-v2.1/le2m/parts/goughScale/goughScaleTexts.py:35
+msgid "Tourné/e vers soi"
+msgstr ""
+
+#: /home/irtimid/Documents/travail/programmes/le2m-v2.1/le2m/parts/goughScale/goughScaleTexts.py:36
+msgid "Ordinaire"
+msgstr ""
+
+#: /home/irtimid/Documents/travail/programmes/le2m-v2.1/le2m/parts/goughScale/goughScaleTexts.py:37
+msgid "Drôle"
+msgstr ""
+
+#: /home/irtimid/Documents/travail/programmes/le2m-v2.1/le2m/parts/goughScale/goughScaleTexts.py:38
+msgid "Conservateur/trice"
+msgstr ""
+
+#: /home/irtimid/Documents/travail/programmes/le2m-v2.1/le2m/parts/goughScale/goughScaleTexts.py:39
+msgid "Individualiste"
+msgstr ""
+
+#: /home/irtimid/Documents/travail/programmes/le2m-v2.1/le2m/parts/goughScale/goughScaleTexts.py:40
+msgid "Conformiste"
+msgstr ""
+
+#: /home/irtimid/Documents/travail/programmes/le2m-v2.1/le2m/parts/goughScale/goughScaleTexts.py:41
+msgid "Décontracté/e"
+msgstr ""
+
+#: /home/irtimid/Documents/travail/programmes/le2m-v2.1/le2m/parts/goughScale/goughScaleTexts.py:42
+msgid "Insatisfait/e"
+msgstr ""
+
+#: /home/irtimid/Documents/travail/programmes/le2m-v2.1/le2m/parts/goughScale/goughScaleTexts.py:43
+msgid "Clairvoyant/e"
+msgstr ""
+
+#: /home/irtimid/Documents/travail/programmes/le2m-v2.1/le2m/parts/goughScale/goughScaleTexts.py:44
+msgid "Méfiant/e"
+msgstr ""
+
+#: /home/irtimid/Documents/travail/programmes/le2m-v2.1/le2m/parts/goughScale/goughScaleTexts.py:45
+msgid "Honnête"
+msgstr ""
+
+#: /home/irtimid/Documents/travail/programmes/le2m-v2.1/le2m/parts/goughScale/goughScaleTexts.py:46
+msgid "Intelligent/e"
+msgstr ""
+
+#: /home/irtimid/Documents/travail/programmes/le2m-v2.1/le2m/parts/goughScale/goughScaleTexts.py:47
+msgid "Bien élevé/e"
+msgstr ""
+
+#: /home/irtimid/Documents/travail/programmes/le2m-v2.1/le2m/parts/goughScale/goughScaleTexts.py:48
+msgid "Très curieux/se"
+msgstr ""
+
+#: /home/irtimid/Documents/travail/programmes/le2m-v2.1/le2m/parts/goughScale/goughScaleTexts.py:49
+msgid "Inventif/ve"
+msgstr ""
+
+#: /home/irtimid/Documents/travail/programmes/le2m-v2.1/le2m/parts/goughScale/goughScaleTexts.py:50
+msgid "Imaginatif/ve"
+msgstr ""
+
+#: /home/irtimid/Documents/travail/programmes/le2m-v2.1/le2m/parts/goughScale/goughScaleTexts.py:51
+msgid "Confiante/e"
+msgstr ""
+
+#: /home/irtimid/Documents/travail/programmes/le2m-v2.1/le2m/parts/goughScale/goughScaleTexts.py:52
+msgid "Peu curieux/se"
+msgstr ""
+
+#: /home/irtimid/Documents/travail/programmes/le2m-v2.1/le2m/parts/goughScale/goughScaleTexts.py:53
+msgid "Réfléchi/e"
+msgstr ""
+
+#: /home/irtimid/Documents/travail/programmes/le2m-v2.1/le2m/parts/goughScale/goughScaleTexts.py:54
+msgid "Sincère"
+msgstr ""
+
+#: /home/irtimid/Documents/travail/programmes/le2m-v2.1/le2m/parts/goughScale/goughScaleTexts.py:55
+msgid "Ingénieux/se"
+msgstr ""
+
+#: /home/irtimid/Documents/travail/programmes/le2m-v2.1/le2m/parts/goughScale/goughScaleTexts.py:56
+msgid "Confiant/e en soi"
+msgstr ""
+
+#: /home/irtimid/Documents/travail/programmes/le2m-v2.1/le2m/parts/goughScale/goughScaleTexts.py:57
+msgid "Sexy"
+msgstr ""
+
+#: /home/irtimid/Documents/travail/programmes/le2m-v2.1/le2m/parts/goughScale/goughScaleTexts.py:58
+msgid "Soumis/e"
+msgstr ""
+
+#: /home/irtimid/Documents/travail/programmes/le2m-v2.1/le2m/parts/goughScale/goughScaleTexts.py:59
+msgid "Snob"
+msgstr ""
+
+#: /home/irtimid/Documents/travail/programmes/le2m-v2.1/le2m/parts/goughScale/goughScaleTexts.py:60
+msgid "Non conformiste"
+msgstr ""

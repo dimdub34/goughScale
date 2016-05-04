@@ -2,7 +2,6 @@
 
 import logging
 import random
-
 from twisted.internet import defer
 from client.cltremote import IRemote
 # from client.cltgui.cltguidialogs import GuiRecapitulatif
@@ -54,7 +53,7 @@ class RemoteGS(IRemote):
         logger.info(u"{} Decision".format(self._le2mclt.uid))
         if self._le2mclt.simulation:
             decisions = {}
-            for k, in texts_GS.GS_items.viewkeys():
+            for k in texts_GS.GS_items.viewkeys():
                 decisions[k] = bool(random.randint(0, 1))
             logger.info(u"{} Send back {}".format(self._le2mclt.uid, decisions))
             return decisions

@@ -59,7 +59,7 @@ class PartieGS(Partie):
         decisions = yield(self.remote.callRemote(
             "display_decision"))
         self.currentperiod.GS_decisiontime = (datetime.now() - debut).seconds
-        for k, v in decisions:
+        for k, v in decisions.viewitems():
             setattr(self.currentperiod, "GS_{}".format(k), v)
         self.joueur.info(u"Ok")
         self.joueur.remove_waitmode()
@@ -165,13 +165,14 @@ class RepetitionsGS(Base):
     GS_cumulativepayoff = Column(Float)
 
     def __init__(self, period):
+        self.GS_period = period
         self.GS_decisiontime = 0
         self.GS_periodpayoff = 0
         self.GS_cumulativepayoff = 0
 
-    def todict(self, joueur=None):
+    def todict(self, player=None):
         temp = {c.name: getattr(self, c.name) for c in self.__table__.columns}
-        if joueur:
-            temp["joueur"] = joueur
+        if player:
+            temp["joueur"] = player
         return temp
 

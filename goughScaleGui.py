@@ -10,6 +10,7 @@ import goughScaleParams as pms
 from goughScaleTexts import trans_GS
 import goughScaleTexts as texts_GS
 from client.cltgui.cltguiwidgets import WExplication
+import random
 
 
 logger = logging.getLogger("le2m")
@@ -54,6 +55,8 @@ class GuiDecision(QtGui.QDialog):
         self.setFixedSize(self.size())
 
         if self._automatique:
+            for v in self._checkboxes.viewvalues():
+                v.setChecked(bool(random.randint(0, 1)))
             self._timer_automatique = QtCore.QTimer()
             self._timer_automatique.timeout.connect(
                 buttons.button(QtGui.QDialogButtonBox.Ok).click)
@@ -75,7 +78,7 @@ class GuiDecision(QtGui.QDialog):
         if not self._automatique:
             confirmation = QtGui.QMessageBox.question(
                 self, le2mtrans(u"Confirmation"),
-                le2mtrans(u"Do you confirm your choice?"),
+                le2mtrans(u"Do you confirm your choices?"),
                 QtGui.QMessageBox.No | QtGui.QMessageBox.Yes)
             if confirmation != QtGui.QMessageBox.Yes: 
                 return

@@ -10,26 +10,20 @@ import os
 import configuration.configparam as params
 import gettext
 from collections import OrderedDict
+import logging
 
-
+logger = logging.getLogger("le2m")
 localedir = os.path.join(params.getp("PARTSDIR"), "goughScale", "locale")
-trans_GS = gettext.translation(
-  "goughScale", localedir, languages=[params.getp("LANG")]).ugettext
-
-
-def get_histo_head():
-    return [le2mtrans(u"Period"), le2mtrans(u"Decision"),
-             le2mtrans(u"Period\npayoff"), le2mtrans(u"Cumulative\npayoff")]
+try:
+    trans_GS = gettext.translation(
+      "goughScale", localedir, languages=[params.getp("LANG")]).ugettext
+except IOError:
+    logger.critical(u"Translation file not found")
+    trans_GS = lambda x: x  # if there is an error, no translation
 
 
 def get_text_explanation():
-    return trans_GS(u"")
-
-
-def get_text_summary(period_content):
-    txt = trans_GS(u"Summary text")
-    return txt
-
+    return trans_GS(u"Please check the items you think they qualify yourself.")
 
 # the key is the variable name and the value the text to display
 GS_items = OrderedDict()
@@ -65,9 +59,11 @@ GS_items["soumis"] = trans_GS(u"Soumis/e")
 GS_items["snob"] = trans_GS(u"Snob")
 GS_items["non_conformiste"] = trans_GS(u"Non conformiste")
 
+# def get_histo_head():
+#     return [le2mtrans(u"Period"), le2mtrans(u"Decision"),
+#              le2mtrans(u"Period\npayoff"), le2mtrans(u"Cumulative\npayoff")]
 
-
-
-
-
+# def get_text_summary(period_content):
+#     txt = trans_GS(u"Summary text")
+#     return txt
 
