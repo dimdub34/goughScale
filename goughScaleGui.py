@@ -28,7 +28,7 @@ class GuiDecision(QtGui.QDialog):
 
         wexplanation = WExplication(
             text=texts_GS.get_text_explanation(),
-            size=(450, 80), parent=self)
+            size=(450, 50), parent=self)
         layout.addWidget(wexplanation)
 
         grid = QtGui.QGridLayout()
