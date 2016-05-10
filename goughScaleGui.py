@@ -50,7 +50,7 @@ class GuiDecision(QtGui.QDialog):
         buttons.accepted.connect(self._accept)
         layout.addWidget(buttons)
 
-        self.setWindowTitle(trans_GS(u"Title"))
+        self.setWindowTitle(le2mtrans(u"Questionnaire"))
         self.adjustSize()
         self.setFixedSize(self.size())
 
